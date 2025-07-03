@@ -3,29 +3,27 @@ package edu.uam.backend.cursos.Game;
 import edu.uam.backend.cursos.Game.Player.Model.Player;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
 @Entity
-@Getter
-@Setter
 public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Player jugadorSeleccionado;
 
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String pistasDadas;
 
-    private Integer intentosRealizados;
+    private int intentosRealizados = 0;
 
     private boolean finalizada;
 
     @Lob
-    private String camposAcertadosJson;
-
+    @Column(columnDefinition = "TEXT")
+    private String camposAcertadosJson = "{}";
 }

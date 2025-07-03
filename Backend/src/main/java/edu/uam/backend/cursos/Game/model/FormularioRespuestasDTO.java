@@ -8,8 +8,9 @@ public class FormularioRespuestasDTO {
     private Integer edad;
     private String paisRegion;
     private String posicion;
-    private String tLiga;
+    private String liga;
     private String equipoActual;
     private Integer premiosInd;
     private Integer premiosColect;
+
 }

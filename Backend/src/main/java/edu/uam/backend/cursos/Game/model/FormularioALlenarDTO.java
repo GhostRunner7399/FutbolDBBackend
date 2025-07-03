@@ -8,4 +8,5 @@ public class FormularioALlenarDTO {
     private String pista1;
     private String campo2;
     private String pista2;
+    private String descripcion;
 }
